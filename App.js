@@ -8,13 +8,12 @@
 
 import React, { useState } from 'react';
 import {
-  Text,
   SafeAreaView,
   StatusBar,
   View,
-  TouchableOpacity,
 } from 'react-native';
 import Campana from './src/component/Campana';
+import AwesomeButton from "react-native-really-awesome-button/src/themes/cartman";
 
 
 const App = () => {
@@ -32,24 +31,26 @@ const App = () => {
         <Campana
           run={ringTheBell}
         />
-
-        <TouchableOpacity
-          onPress={() => setRingTheBell(!ringTheBell)}
+        <AwesomeButton
+          size='large'
+          type="secondary"
+          backgroundActive="rgba(0,0,0,0)"
+          activeOpacity={.5}
+          textColor="#FFFFFF"
+          width={140}
           style={{
-            marginTop: 70,
-            borderWidth: 1,
-            paddingHorizontal: 30,
-            paddingVertical: 20
-          }}>
-          <Text style={{
-            fontSize: 23,
-            fontWeight: '600'
-          }}>Press me</Text>
-        </TouchableOpacity>
+            marginTop: 100
+          }}
+          onPress={() => setRingTheBell(value => !value)}
+        >
+          Press me
+        </AwesomeButton>
       </View>
     </SafeAreaView>
   );
 };
+
+
 
 
 export default App;
